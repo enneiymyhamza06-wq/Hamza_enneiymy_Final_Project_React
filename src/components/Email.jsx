@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 function Email() {
+  const navigate = useNavigate();
   return (
    <>
-   <section className='flex items-center justify-center'>
+   <section className='flex items-center justify-center container'>
 
        <div className='border p-4 rounded-2xl w-150 h-100 flex flex-col '>
         <div className='flex flex-col mt-15 gap-4'>
@@ -16,6 +19,7 @@ function Email() {
       <button
                   className="bg-black hover:bg-blue-700 text-white w-30 h-15 rounded focus:outline-none focus:shadow-outline transition-colors cursor-pointer"
                   type="button"
+                  onClick={() => navigate('/Create_Account')}
                   >
                   CONTINUE
                 </button>
