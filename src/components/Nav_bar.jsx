@@ -14,7 +14,7 @@ function Nav_bar() {
         <>
             <nav className='w-full h-40 bg-[#ffffff] flex-column'>
                 <div className='text-gray-400 w-full h-10 bg-[#f5f5f5] p-5 flex items-center justify-between'>
-                    <div className='flex text-[20px] gap-2 '>
+                <div className='flex text-[20px] gap-2 '>
                         <FaFacebookF className='hover:text-red-500' />
                         <FaTwitter className='hover:text-red-500' />
                         <FaPinterestSquare className='hover:text-red-500' />
@@ -55,8 +55,8 @@ function Nav_bar() {
                 <div className='w-45 h-25 text-4xl flex items-center gap-4 justify-center
                  text-gray-400'>
                     
-                        <p className='border-r-2 pr-3' onClick={() => navigate('/email')}
-                        ><FaRegUserCircle /></p>
+    
+                        <p className='border-r-2 pr-3' onClick={() => navigate('/email')}><FaRegUserCircle /></p>
                   
                     <p><GrShop /> </p>
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { imgg } from "../constants/imags";
 import { IoSearch } from "react-icons/io5";
+import { data } from 'react-router-dom';
 
 
 function Blog() {
@@ -105,17 +106,12 @@ Boxy3 T-Shirt with Roll Sleeve
           <p className="text-gray-400 text-sm">$30.00</p>
      <p className="text-gray-400 text-sm">$20.00</p>
       </div>
-  
-             
-              </div>
-            </div>
-
-          </div>
-
+         </div>
         </div>
-
       </div>
     </div>
+    </div>
+   </div>
         </section>
         <section className=' w-full h-fit container mx-auto flex'>
               <div className=" max-w-4xl mx-auto flex flex-col ml-3 w-[70%]" >

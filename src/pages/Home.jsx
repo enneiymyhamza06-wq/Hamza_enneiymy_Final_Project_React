@@ -72,52 +72,70 @@ function Home() {
       </Carousel>
     </section>
 
-<section className='container mx-auto pt-3'>
-  <div className=' w-full h-200 flex gap-2'>
-    <div className=' w-[33%]  h-[99%] flex flex-col gap-3'>
-      <div className='w-[100%] h-[60%] overflow-hidden relative group'>
+<section className='container mx-auto pt-3 '>
+  <div className=' w-full h-200 flex gap-5  justify-center'>
+    <div className=' w-[28%]  h-[99%] flex flex-col gap-3'>
+      <div className='w-[100%] h-[60%] overflow-hidden relative group  '>
         <div className='flex items-center justify-center h-[100%] w-[100%] overflow-hidden relative'>
-           <img src={imgg.banner_02} className='w-[80%]  h-[100%] object-fit-cover' alt="" />
+           <motion.img src={imgg.banner_02} 
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }} 
+           className='w-[100%] absolute h-[100%] object-fit-cover' alt="" />
                    <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[80%] right-[36%]'>Dresses</button>
         </div>
        
       </div>
       <div className=' w-[100%] h-[40%]'>
-          <div className='flex items-center justify-center h-[100%]  w-[100%] relative '>
-           <img src={imgg.cards4} className='w-[80%]  h-[100%] object-fit-cover ' alt="" />
+          <div className='flex items-center justify-center h-[100%]  w-[100%] relative overflow-hidden'>
+           <motion.img src={imgg.cards4} 
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+           className='w-[100%]  h-[100%] object-fit-cover ' alt="" />
         <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-55'>Sunglasses</button>
         </div>
       </div>
     </div>
 
-     <div className='  flex flex-col gap-3 w-[33%] w-50 h-[99%]'>
+     <div className='  flex flex-col gap-3 w-[28%] w-50 h-[99%]'>
       <div className=' w-full h-[40%]'>
-   <div className='flex items-center justify-center h-[100%] w-[100%] relative'>
-           <img src={imgg.cards2} className='w-[80%]  h-[100%] object-fit-cover ' alt="" />
+   <div className='flex items-center justify-center h-[100%] w-[100%] relative overflow-hidden'>
+           <motion.img src={imgg.cards2} 
+              whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+           className='w-[100%]  h-[100%] object-fit-cover ' alt="" />
                    <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute  z-111 top-60 right-[34%]'>Watches</button>
 
         </div>
        
       </div>
       <div className=' w-full h-[60%]'>
-           <div className='flex items-center justify-center h-[100%]  w-[100%] relative'>
-           <img src={imgg.cards5} className='w-[80%]  h-[100%] object-fit-cover' alt="" />
+           <div className='flex items-center justify-center h-[100%]  w-[100%] relative overflow-hidden'>
+           <motion.img src={imgg.cards5}
+              whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+            className='w-[100%]  h-[100%] object-fit-cover' alt="" />
         <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[80%] right-[35%]'>Footerwear</button>
         </div>
        
       </div>
     </div>
 
-     <div className='  flex flex-col gap-3 w-[33%] w-50 h-[99%]'>
+     <div className='  flex flex-col gap-3 w-[29%] w-50 h-[99%]'>
         <div className='w-full h-[60%]'>
-           <div className='flex items-center justify-center h-[100%] w-[100%] relative'>
-           <img src={imgg.cards3} className='w-[80%]  h-[100%] object-fit-cover ' alt="" />
+           <div className='flex items-center justify-center h-[100%] w-[100%] relative overflow-hidden'>
+           <motion.img src={imgg.cards3}
+              whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+            className='w-[100%]  h-[100%] object-fit-cover ' alt="" />
            <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[80%] right-[33%]'>Bags</button>
         </div>
         </div>
       <div className=' w-full h-[40%]'>
-           <div className='flex items-center justify-center h-[100%]  w-[100%] relative'>
-           <img src={imgg.cards6} className='w-[80%]  h-[100%] object-fit-cover ' alt="" />
+           <div className='flex items-center justify-center h-[100%]  w-[100%] relative overflow-hidden'>
+           <motion.img src={imgg.cards6} 
+              whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+           className='w-[100%]  h-[100%] object-fit-cover ' alt="" />
            <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[70%] right-[33%]'>Accessories</button>
 
         </div>
@@ -146,7 +164,9 @@ function Home() {
             <div className="p-1">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
-                  <img src={imgg.shopItem8} className='w-[100%] object-fit-cover ' alt="" />
+                  <img src={imgg.shopItem8} 
+                  
+                  className='w-[100%] object-fit-cover ' alt="" />
                 </CardContent>
                 <div className='pl-5'>
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
@@ -287,7 +307,8 @@ function Home() {
 
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         />
-        {/* <div className="absolute inset-0 bg-black/10"> </div> */}
+        {/* <div className="absolute inset-0 bg-black/10"> 
+        </div> */}
         
         <div className="relative z-10 text-center text-white p-4">
           <h3 className="text-xl font-medium tracking-wide mb-2 drop-shadow-md">The Beauty</h3>
@@ -345,9 +366,16 @@ function Home() {
 
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
 
-  <div>
-    <img src={imgg.blog_1} class="w-full h-72 object-cover" />
-    <h3 class="text-xl font-semibold mt-4">
+  <div className='flex flex-col gap-2'>
+    <div className='w-[100%] h-[82%]  overflow-hidden'>
+        <motion.img src={imgg.blog_1}
+       whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.6 }} 
+
+     class="w-full h-72 object-cover" />
+    </div>
+  <div className='w-[100%] h-[50%] '>
+        <h3 class="text-xl font-semibold mt-4">
        Black Friday Guide: Best Sales & Discount Codes
       </h3>
       <p class="text-sm text-gray-500 mt-2">
@@ -357,9 +385,17 @@ function Home() {
     </p>
   </div>
 
+  </div>
+
     <div>
-      <img src={imgg.blog_2} class="w-full h-72 object-cover" />
-      <h3 class="text-xl font-semibold mt-4">
+      <div className='w-[100%] h-[62%] bg-emerald-400 overflow-hidden'>
+          <motion.img src={imgg.blog_2}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+           class="w-full h-75 object-cover" />
+      </div>
+    <div className='w-[100%] h-[50%]'>
+         <h3 class="text-xl font-semibold mt-4">
       The White Sneakers Nearly Every Fashion Girls Own
       </h3>
       <p class="text-sm text-gray-500 mt-2">
@@ -371,10 +407,19 @@ function Home() {
         Interdum et...
       </p>
     </div>
+   
+    </div>
 
     <div>
-      <img src={imgg.blog_3} class=" w-full h-72 object-cover" />
-      <h3 class="text-xl font-semibold mt-4"> New York SS 2018 Street Style: By Annina Mislin
+      <div className='w-[100%] h-[62%] bg-emerald-400 overflow-hidden'>
+              <motion.img src={imgg.blog_3}
+                 whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+               class=" w-full h-75 object-cover" />
+
+      </div>
+      <div className='w-[100%] h-[50%]'>
+   <h3 class="text-xl font-semibold mt-4"> New York SS 2018 Street Style: By Annina Mislin
          </h3>                   
     
     <p class="text-sm text-gray-500 mt-2">
@@ -382,7 +427,10 @@ function Home() {
       
     <p class="text-gray-600  mt-3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...
-      </p>    </div>
+      </p> 
+      </div>
+     
+       </div>
 
   </div>
 </section>

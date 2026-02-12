@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Nav_bar />
-      
+     
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Shop" element={<Shop />} />
@@ -23,7 +23,8 @@ function App() {
         <Route path="/email" element={<Email />} />
         <Route path="/Create_Account" element={<Create_Account />} />
       </Routes>
-      <Footer />
+       {/* <Contact/> */}
+      {/* <Footer /> */}
     </BrowserRouter>
   )
 }

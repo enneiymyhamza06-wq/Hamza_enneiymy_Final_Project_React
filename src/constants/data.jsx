@@ -1,7 +1,6 @@
 import React from 'react'
 import { imgg } from "../constants/imags";
 
-
 export const products = [
 
   {
@@ -10,7 +9,7 @@ export const products = [
     price: 20.00,
     compareAtPrice: null,
     badge: null,
-    image: "/images/p1.jpg",
+    image: imgg.item_3,
   },
   {
     id: 2,
@@ -18,7 +17,7 @@ export const products = [
     price: 20.00,
     compareAtPrice: null,
     badge: null,
-    image: "/images/p2.jpg",
+    image: imgg.shopItem2,
   },
   {
     id: 3,
@@ -26,7 +25,7 @@ export const products = [
     price: 20.00,
     compareAtPrice: null,
     badge: null,
-    image: "/images/p3.jpg",
+    image: imgg.shopItem3,
   },
   {
     id: 4,
@@ -34,7 +33,7 @@ export const products = [
     price: 20.00,
     compareAtPrice: 30.00,
     badge: "Sale",
-    image: "/images/p4.jpg",
+    image: imgg.shopItem4,
   },
   {
     id: 5,
@@ -42,7 +41,7 @@ export const products = [
     price: 20.00,
     compareAtPrice: null,
     badge: null,
-    image: "/images/p5.jpg",
+     image: imgg.shopItem5,
   },
   {
     id: 6,
@@ -50,7 +49,7 @@ export const products = [
     price: 20.00,
     compareAtPrice: null,
     badge: null,
-    image: "/images/p6.jpg",
+     image: imgg.shopItem6,
   },
   
 
@@ -60,7 +59,7 @@ export const products = [
     price: 20.00,
     compareAtPrice: null,
     badge: null,
-    image: "/images/p7.jpg", 
+     image: imgg.shopItem7,
   },
   {
     id: 8,
@@ -68,8 +67,6 @@ export const products = [
     price: 20.00,
     compareAtPrice: null,
     badge: null,
-    image: "/images/p8.jpg", 
+    image: imgg.shopItem8,
   },
 ];
-
-

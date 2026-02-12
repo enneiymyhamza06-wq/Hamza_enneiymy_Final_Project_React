@@ -12,7 +12,7 @@ function Shop() {
         <img src={imgg.banner} alt="" />
         <h1 className='text-white z-111 font-extrabold text-5xl absolute top-25 right-220'>PRODUCTS</h1>
     </section>
-    <section className='bg-blue-400 container w-full h-250 mx-auto'>
+    <section className='container w-full h-250 mx-auto'>
         <div className='flex w-full h-full '>
              <div className=' h-[99%] w-100 gap-15 p-5 flex flex-col'>
                 <div className='flex flex-col'>
@@ -78,8 +78,8 @@ function Shop() {
                 </div>
                
              </div>
-    <div className='bg-amber-400 h-[99%] w-350 flex flex-col'>
-        <div className='bg-red-500 w-full h-25 flex gap-3 justify-between p-5'>
+    <div className=' h-[99%] w-350 flex flex-col'>
+        <div className='b w-full h-25 flex gap-3 justify-between p-5'>
             <div className='flex gap-5'>
                   <select className='border-gray-400 border w-60 h-10'>
                     <option value="">Featured</option>
@@ -103,28 +103,22 @@ function Shop() {
         
         </div>
  
-<section className='bg-fuchsia-900'>
+<section >
   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16 p-2">
     
-    {products.map((item) => ( // Sta3mel item direct
+    {products.map((item) => (
       <div key={item.id} className="cursor-pointer">
-        
-        {/* HNA FIN SLLA7NA: 
-            1. 7iyedna 'flex' bach taswira takhod ra7tha
-            2. 7iyedna 'Movie' span
-            3. Beddelna source l 'item.image' 
-        */}
         <div className="w-full h-97 bg-gray-800 rounded-2xl overflow-hidden">
              <img 
                src={item.image} 
                alt={item.title} 
-               className="w-full h-full object-cover" // object-cover bach t3amar l-box
+               className="w-full h-full object-cover"
              />
         </div>
 
         <div>
           <h3 className="text-white text-sm font-medium mt-1">{item.title}</h3>
-          <p className="text-gray-400 text-sm">${item.price}</p> {/* Zedt taman bach yban mzyan */}
+          <p className="text-gray-400 text-sm">${item.price}</p> 
         </div>
 
       </div>
