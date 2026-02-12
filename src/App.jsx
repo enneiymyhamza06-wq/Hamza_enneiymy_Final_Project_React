@@ -8,14 +8,14 @@ import Create_Account from './components/Create_Account'
 function App() {
   return (
     <BrowserRouter>
-      {/* <Nav_bar /> */}
+      <Nav_bar />
       
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/email" element={<Email />} />
         <Route path="/Create_Account" element={<Create_Account />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   )
 }
