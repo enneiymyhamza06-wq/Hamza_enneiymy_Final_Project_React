@@ -49,7 +49,7 @@ function Nav_bar() {
                     <a href="" className='hover:border-b-2 '>Sale</a>
                     <a href="" className='hover:border-b-2 '>Features</a>
                     <a href="/Blog" className='hover:border-b-2 '>Blog</a>
-                    <a href="" className='hover:border-b-2 '>About</a>
+                    <a href="/About" className='hover:border-b-2 '>About</a>
                     <a href="/Contact" className='hover:border-b-2 '>Contact</a>
                 </div>
                 <div className='w-45 h-25 text-4xl flex items-center gap-4 justify-center

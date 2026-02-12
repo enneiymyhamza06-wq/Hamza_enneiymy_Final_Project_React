@@ -7,6 +7,7 @@ import Create_Account from './components/Create_Account'
 import Shop from './pages/Shop'
 import Blog from './pages/Blog'
 import { Contact } from 'lucide-react'
+import About from './pages/About'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Shop" element={<Shop />} />
         <Route path="/Blog" element={<Blog />} />
+        <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/email" element={<Email />} />
         <Route path="/Create_Account" element={<Create_Account />} />

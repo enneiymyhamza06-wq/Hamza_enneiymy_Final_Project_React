@@ -78,11 +78,8 @@ src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5901.408187417011!2d-8
 
                 </div>
                 </section> */}
-                <div className='bg-amber-500 w-100 h-100'>
-                    <h1>heelo</h1>
-                </div>
+            
         </>
     )
 }
-
 export default Contact 
