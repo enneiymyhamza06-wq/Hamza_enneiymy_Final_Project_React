@@ -2,7 +2,8 @@ import React from 'react'
 import { imgg } from "../constants/imags";
 import Autoplay from "embla-carousel-autoplay" 
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button" // Ila knti khdam b shadcn button
+import { Button } from "@/components/ui/button" 
+import { motion } from "motion/react"
 
 import {
   Carousel,
@@ -47,9 +48,12 @@ function Home() {
                 <div className="absolute inset-0 bg-black/20"></div>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white space-y-4 px-4">
-                  <p className="text-sm md:text-lg font-light uppercase">
+                  <motion.p className="text-sm md:text-lg font-light uppercase "  animate={{
+    scale: 2,
+    transition: { duration: 2 }
+  }}>
                     Women Collection 2018
-                  </p>
+                  </motion.p>
                   <h2 className="text-4xl md:text-6xl font-bold">
                     NEW ARRIVALS
                   </h2>
@@ -68,18 +72,13 @@ function Home() {
       </Carousel>
     </section>
 
-
-
-
-
 <section className='container mx-auto pt-3'>
   <div className=' w-full h-200 flex gap-2'>
     <div className=' w-[33%]  h-[99%] flex flex-col gap-3'>
-      <div className='w-[100%] h-[60%]'>
-        <div className='flex items-center justify-center h-[100%]  w-[100%] relative'>
+      <div className='w-[100%] h-[60%] overflow-hidden relative group'>
+        <div className='flex items-center justify-center h-[100%] w-[100%] overflow-hidden relative'>
            <img src={imgg.banner_02} className='w-[80%]  h-[100%] object-fit-cover' alt="" />
                    <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[80%] right-[36%]'>Dresses</button>
-
         </div>
        
       </div>
@@ -279,12 +278,16 @@ function Home() {
       
  
       <div className="relative w-22 md:w-1/2 h-[500px] flex items-center justify-center bg-gray-200 overflow-hidden ">
-        <img 
+        <motion.img 
+
           src={imgg.banner_08}
-          alt="Lookbook Model" 
-          className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+          alt="Lookbook Model"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.6 }} 
+
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
         />
-        <div className="absolute inset-0 bg-black/10"></div>
+        {/* <div className="absolute inset-0 bg-black/10"> </div> */}
         
         <div className="relative z-10 text-center text-white p-4">
           <h3 className="text-xl font-medium tracking-wide mb-2 drop-shadow-md">The Beauty</h3>

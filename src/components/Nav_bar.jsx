@@ -45,7 +45,7 @@ function Nav_bar() {
 
                 <div className='flex gap-2 text-[19px] font-light gap-4 text-gray-500'>
                     <a href="/" className='hover:border-b-2 '>Home</a>
-                    <a href="" className='hover:border-b-2 '>Shop</a>
+                    <a href="/Shop" className='hover:border-b-2 '>Shop</a>
                     <a href="" className='hover:border-b-2 '>Sale</a>
                     <a href="" className='hover:border-b-2 '>Features</a>
                     <a href="" className='hover:border-b-2 '>Blog</a>
