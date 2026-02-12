@@ -356,7 +356,7 @@ function Home() {
 <section class="w-full bg-gray-100 py-12 text-center">
  <h2 class="text-3xl font-bold mb-12">@ FOLLOW US ON INSTAGRAM</h2>
 
-  <div class="max-w-6xl mx-auto flex justify-between px-6">
+  <div class="max-w-6xl  mx-auto flex   justify-between px-6">
 
    <div >
       <h3 class="text-lg font-semibold">Free Delivery Worldwide</h3>
