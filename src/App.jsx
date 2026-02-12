@@ -5,6 +5,8 @@ import Nav_bar from './components/Nav_bar'
 import Home from './pages/Home'
 import Create_Account from './components/Create_Account'
 import Shop from './pages/Shop'
+import Blog from './pages/Blog'
+import { Contact } from 'lucide-react'
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Shop" element={<Shop />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/email" element={<Email />} />
         <Route path="/Create_Account" element={<Create_Account />} />
       </Routes>
