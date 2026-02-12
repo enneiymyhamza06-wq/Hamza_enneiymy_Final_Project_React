@@ -1,6 +1,9 @@
 import React from 'react'
 import { imgg } from "../constants/imags";
+import Autoplay from "embla-carousel-autoplay" 
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button" // Ila knti khdam b shadcn button
+
 import {
   Carousel,
   CarouselContent,
@@ -13,33 +16,60 @@ import {
 
 function Home() {
 
+  const images = [imgg.carousel1, imgg.carousel2, imgg.carousel3];
+
+   const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false }) 
+  )
   return (
    
     <div >
-<section className='w-[100%] flex items-center justify-center border'>
-  <Carousel className="w-[93%]">
-    <CarouselContent>
-      {Array.from({ length: 5 }).map((_, index) => (
-        <CarouselItem key={index} className="w-full"> 
-          <div className="w-full p-1">
-            
-              <CardContent className="w-full h-160 flex items-center justify-center p-6">
-                <img
-                  src={imgg.carousel1}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </CardContent>
-              
-          </div>
-        </CarouselItem>
+ <section className="w-full relative">
+      <Carousel
+        plugins={[plugin.current]}
+        className="w-full" // Hna derto w-full bach yji 3la 9ed chacha
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+        opts={{
+          loop: true,
+        }}
+      >
+        <CarouselContent>
+          {images.map((src, index) => (
+            <CarouselItem key={index} className="relative">
+              <div className="w-full h-[400px] md:h-[600px] relative"> 
+                
         
-      ))}
-    </CarouselContent>
-    <CarouselPrevious />
-    <CarouselNext />
-  </Carousel>
-</section>
+                <img
+                  src={src}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover"/>
+                <div className="absolute inset-0 bg-black/20"></div>
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white space-y-4 px-4">
+                  <p className="text-sm md:text-lg font-light uppercase">
+                    Women Collection 2018
+                  </p>
+                  <h2 className="text-4xl md:text-6xl font-bold">
+                    NEW ARRIVALS
+                  </h2>
+                  <Button 
+                    className="mt-4 bg-white text-black hover:bg-gray-200 rounded-full px-8 py-6 text-sm font-semibold transition-all">
+                    SHOP NOW
+                  </Button>
+                </div>
+
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-4" />
+        <CarouselNext className="right-4" />
+      </Carousel>
+    </section>
+
+
+
 
 
 <section className='container mx-auto pt-3'>
@@ -54,9 +84,9 @@ function Home() {
        
       </div>
       <div className=' w-[100%] h-[40%]'>
-          <div className='flex items-center justify-center h-[100%]  w-[100%] '>
-           <img src={imgg.cards4} className='w-[80%]  h-[100%] object-fit-cover relative ' alt="" />
-                   <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute'>Sunglasses</button>
+          <div className='flex items-center justify-center h-[100%]  w-[100%] relative '>
+           <img src={imgg.cards4} className='w-[80%]  h-[100%] object-fit-cover ' alt="" />
+        <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-55'>Sunglasses</button>
         </div>
       </div>
     </div>
@@ -64,9 +94,10 @@ function Home() {
      <div className='  flex flex-col gap-3 w-[33%] w-50 h-[99%]'>
       <div className=' w-full h-[40%]'>
    <div className='flex items-center justify-center h-[100%] w-[100%] relative'>
-           <img src={imgg.cards2} className='w-[80%]  h-[100%] object-fit-cover' alt="" />
+           <img src={imgg.cards2} className='w-[80%]  h-[100%] object-fit-cover ' alt="" />
+                   <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute  z-111 top-60 right-[34%]'>Watches</button>
+
         </div>
-        <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-270 right-[46%]'>Watches</button>
        
       </div>
       <div className=' w-full h-[60%]'>
@@ -361,7 +392,8 @@ function Home() {
    <div >
       <h3 class="text-lg font-semibold">Free Delivery Worldwide</h3>
       <p class="text-gray-500 text-sm mt-2">
-        Mirum est notare quam littera gothica
+        Mirum est 
+        notare quam littera gothica
       </p>
     </div>
 
