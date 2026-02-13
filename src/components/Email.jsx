@@ -74,8 +74,8 @@ function Email() {
                   type="button"
                   >
                   SIGN IN
-                </button>
-                <a href="/" className='text-gray-400 text-lg'>or <span className='text-gray-600 hover:text-red-500'>Return to Store</span> </a>
+        </button>
+        <a href="/" className='text-gray-400 text-lg'>or <span className='text-gray-600 hover:text-red-500'>Return to Store</span> </a>
               </div>
             </form>
           </div>

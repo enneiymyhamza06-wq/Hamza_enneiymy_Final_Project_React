@@ -10,11 +10,11 @@ function Shop() {
 
   return (
     <>
-    <section className=' w-full h-60 relative'>
+    <section className=' w-full h-60  relative'>
         <img src={imgg.banner} alt="" />
         <h1 className='text-white z-111 font-extrabold text-5xl absolute top-25 right-220'>PRODUCTS</h1>
     </section>
-    <section className='container w-full h-250 mx-auto'>
+    <section className='container w-full mx-auto'>
         <div className='flex w-full h-full '>
              <div className=' h-[99%] w-100 gap-15 p-5 flex flex-col'>
                 <div className='flex flex-col'>
