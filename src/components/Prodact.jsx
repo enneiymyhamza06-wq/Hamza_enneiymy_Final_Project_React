@@ -9,11 +9,11 @@ function Products() {
   const visibleProducts = products.slice(start, start + perPage);
 
   return (
-    <section>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16 p-2">
+    <section  className='bg-full h-full '>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-120 w-full h-100 p-2 bg-yellow-100">
     {visibleProducts.map((item) => (
         <div key={item.id} className="cursor-pointer">     
-        <div className="w-full h-130 bg-gray-800 rounded overflow-hidden">
+        <div className="w-full h-100 bg-gray-800 rounded overflow-hidden">
         <img src={item.image}  alt={item.title} className="w-full h-full object-cover"/>
         </div>
     <div>

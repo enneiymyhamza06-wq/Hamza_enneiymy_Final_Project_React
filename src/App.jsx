@@ -16,13 +16,14 @@ import Img_details from './components/Img_details'
 import Our_Blog_details from './components/Our_Blog_details'
 import { Error } from './pages/error'
 
+
+
 function App() {
+
   return (
     <BrowserRouter>
-
-    <Nav_bar />
-
      
+    <Nav_bar />
       <Routes>
         <Route path="*" element={<Error />} />
         <Route path="/" element={<Home />} />
@@ -42,7 +43,8 @@ function App() {
 
 {/* <Our_Blog_details/> */}
 
-      {/* <Footer /> */}
+     <Footer  />
+
     </BrowserRouter>
   )
 }

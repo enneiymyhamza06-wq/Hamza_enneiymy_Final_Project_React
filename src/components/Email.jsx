@@ -1,8 +1,15 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+  
 
 
 function Email() {
+
+
+
+
+
   const navigate = useNavigate();
   return (
    <>
@@ -19,8 +26,7 @@ function Email() {
       <button
                   className="bg-black hover:bg-blue-700 text-white w-30 h-15 rounded focus:outline-none focus:shadow-outline transition-colors cursor-pointer"
                   type="button"
-                  onClick={() => navigate('/Create_Account')}
-                  >
+                  onClick={() => navigate('/Create_Account')}>
                   CONTINUE
                 </button>
    </div>

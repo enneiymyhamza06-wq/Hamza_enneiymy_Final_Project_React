@@ -97,10 +97,9 @@ function Shop() {
         </div>
         
         </div>
- 
-<Products />
-
-
+ <section>
+  <Products />
+ </section>
 
 
         </div> 

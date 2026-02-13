@@ -15,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Footer } from 'flowbite-react';
 
 
 
@@ -443,10 +444,6 @@ function Home() {
   <h2 className="text-4xl font-bold text-center mb-12">OUR BLOG</h2>
 
 {/* vvvvvvvvvvv */}
-
-
-
-
        <div className="max-w-7xl mx-auto grid grid-cols-3 md:grid-col-3 gap-8 px-6 ">
         {blogCards.map((item ,index) => (
           <div key={index.id} className='flex flex-col gap-2'>
@@ -497,7 +494,6 @@ function Home() {
         notare quam littera gothica
       </p>
     </div>
-
    <div className='border-l-2 pl-6'>
       <h3 className="text-lg font-semibold">30 Days Return</h3>
       <p className="text-gray-500 text-sm mt-2">
@@ -514,11 +510,9 @@ function Home() {
 
   </div>
 </section>
-
-
-
-
+  <Footer />
     </div>
+    
   )
 }
 
