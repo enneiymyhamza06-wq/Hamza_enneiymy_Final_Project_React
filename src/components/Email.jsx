@@ -6,7 +6,7 @@ function Email() {
   const navigate = useNavigate();
   return (
    <>
-   <section className='flex items-center justify-center container'>
+   <section className='flex items-center justify-center container pt-30'>
 
        <div className='border p-4 rounded-2xl w-150 h-100 flex flex-col '>
         <div className='flex flex-col mt-15 gap-4'>
@@ -58,7 +58,9 @@ function Email() {
                   placeholder="Enter your email"/>
               </div>
             <div>
-                <a href="" className='hover:text-red-600'>Forgot your password?</a>
+                <p
+                 onClick={() => navigate('/Email_bohdo')}
+                className='hover:text-red-600'>Forgot your password?</p>
             </div>
               <div className="flex justify-start items-center gap-2">
                 <button
@@ -67,7 +69,7 @@ function Email() {
                   >
                   SIGN IN
                 </button>
-                <a href="" className='text-gray-400 text-lg'>or <span className='text-gray-600 hover:text-red-500'>Return to Store</span> </a>
+                <a href="/" className='text-gray-400 text-lg'>or <span className='text-gray-600 hover:text-red-500'>Return to Store</span> </a>
               </div>
             </form>
           </div>

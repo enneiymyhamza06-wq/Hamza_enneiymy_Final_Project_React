@@ -7,7 +7,7 @@ function Create_Account() {
   return (
     <>
 
-<div className="w-full">
+<div className="w-full pt-30">
   <div className="container mx-auto py-12">
     <div className="max-w-lg mx-auto px-4 gap-5 flex flex-col">
       <form className="px-6 w-full flex items-center flex-col">

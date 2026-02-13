@@ -4,6 +4,9 @@ import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button" 
 import { motion } from "motion/react"
+import { Link, useNavigate } from 'react-router-dom'
+import {blogCards} from '../constants/data'
+import { useParams } from 'react-router-dom';
 
 import {
   Carousel,
@@ -16,7 +19,10 @@ import {
 
 
 function Home() {
+  // const prodactid = useParams()
+  // const id = prodactid.id
 
+ const navigate = useNavigate()
   const images = [imgg.carousel1, imgg.carousel2, imgg.carousel3];
 
    const plugin = React.useRef(
@@ -33,35 +39,33 @@ function Home() {
         onMouseLeave={plugin.current.reset}
         opts={{
           loop: true,
-        }}
-      >
+        }}>
         <CarouselContent>
           {images.map((src, index) => (
             <CarouselItem key={index} className="relative">
               <div className="w-full h-[400px] md:h-[600px] relative"> 
-                
-        
                 <img
                   src={src}
                   alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover"/>
                 <div className="absolute inset-0 bg-black/20"></div>
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white space-y-4 px-4">
-                  <motion.p className="text-sm md:text-lg font-light uppercase "  animate={{
-    scale: 2,
-    transition: { duration: 2 }
-  }}>
+                <motion.div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white space-y-4 px-4"
+                initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 2, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}>
+          <motion.p className="text-sm md:text-lg font-light uppercase " 
+       animate={{scale: 2,
+       transition: { duration: 2 }}}>
                     Women Collection 2018
-                  </motion.p>
+        </motion.p>
                   <h2 className="text-4xl md:text-6xl font-bold">
                     NEW ARRIVALS
-                  </h2>
+       </h2>
                   <Button 
                     className="mt-4 bg-white text-black hover:bg-gray-200 rounded-full px-8 py-6 text-sm font-semibold transition-all">
                     SHOP NOW
                   </Button>
-                </div>
+                </motion.div>
 
               </div>
             </CarouselItem>
@@ -81,7 +85,9 @@ function Home() {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.6 }} 
            className='w-[100%] absolute h-[100%] object-fit-cover' alt="" />
-                   <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[80%] right-[36%]'>Dresses</button>
+                   <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[80%] right-[36%]'
+                   onClick={() => navigate('/Shop')}
+                   >Dresses</button>
         </div>
        
       </div>
@@ -91,7 +97,7 @@ function Home() {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.6 }}
            className='w-[100%]  h-[100%] object-fit-cover ' alt="" />
-        <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-55'>Sunglasses</button>
+        <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-55'  onClick={() => navigate('/Shop')} >Sunglasses</button>
         </div>
       </div>
     </div>
@@ -103,7 +109,7 @@ function Home() {
               whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.6 }}
            className='w-[100%]  h-[100%] object-fit-cover ' alt="" />
-                   <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute  z-111 top-60 right-[34%]'>Watches</button>
+                   <button className='bg-white w-40 h-13 cursor-pointer hover:text-white   hover:bg-red-500 font-lg absolute  z-111 top-60 right-[34%]'  onClick={() => navigate('/Shop')}>Watches</button>
 
         </div>
        
@@ -136,7 +142,7 @@ function Home() {
               whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.6 }}
            className='w-[100%]  h-[100%] object-fit-cover ' alt="" />
-           <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[70%] right-[33%]'>Accessories</button>
+           <button className='bg-white w-40 h-13 cursor-pointer hover:text-white  hover:bg-red-500 font-lg absolute top-[70%] right-[33%]'  onClick={() => navigate('/Shop')}>Accessories</button>
 
         </div>
       </div>
@@ -152,18 +158,25 @@ function Home() {
   <div className=' w-full h-120'>
     <div  className="w-full flex justify-center items-center">
  <Carousel
+    plugins={[
+        Autoplay({
+          delay: 2200,          
+          stopOnInteraction: false, 
+        }),
+      ]}
       opts={{
         align: "start",
-         slidesToScroll: 4,
+        slidesToScroll: 4,
+        loop: true,   
       }}
-     className="w-[90%]"
+      className="w-[90%]"
     >
       <CarouselContent>
 
           <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 relative group">
              
-                <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
+                <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%] ">
                   <img src={imgg.shopItem8} 
                   
                   className='w-[100%] object-fit-cover ' alt="" />
@@ -171,14 +184,23 @@ function Home() {
                 <div className='pl-5'>
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
+
                 </div>
-               
+ <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>
       
             </div>
           </CarouselItem>
 
           <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 relative group">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
                   <img src={imgg.shopItem7} className='w-[100%] object-fit-cover ' alt="" />
@@ -187,13 +209,21 @@ function Home() {
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
                 </div>
-               
+                           <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>   
       
             </div>
           </CarouselItem>
 
           <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 group relative">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
                   <img src={imgg.shopItem6} className='w-[100%] object-fit-cover ' alt="" />
@@ -202,13 +232,21 @@ function Home() {
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
                 </div>
-               
+                <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>
       
             </div>
           </CarouselItem>
 
           <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 group relative">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
                   <img src={imgg.shopItem5} className='w-[100%] object-fit-cover ' alt="" />
@@ -217,13 +255,21 @@ function Home() {
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
                 </div>
-               
+                              <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>
       
             </div>
           </CarouselItem>
 
             <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 relative group">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
                   <img src={imgg.shopItem4} className='w-[100%] object-fit-cover ' alt="" />
@@ -232,13 +278,21 @@ function Home() {
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
                 </div>
-               
+                              <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>
       
             </div>
           </CarouselItem>
 
            <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 relative group">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
                   <img src={imgg.shopItem3} className='w-[100%] object-fit-cover ' alt="" />
@@ -247,13 +301,21 @@ function Home() {
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
                 </div>
-               
+                              <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>
       
             </div>
           </CarouselItem>
 
         <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 relative group">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
                   <img src={imgg.shopItem2} className='w-[100%] object-fit-cover ' alt="" />
@@ -263,12 +325,20 @@ function Home() {
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
                 </div>
                
-      
+                     <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>
             </div>
           </CarouselItem>
 
          <CarouselItem className="basis-1/2 lg:basis-1/4">
-            <div className="p-1">
+            <div className="p-1 relative group">
              
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[100%]">
                   <img src={imgg.item_3} className='w-[100%] object-fit-cover ' alt="" />
@@ -277,7 +347,15 @@ function Home() {
                    <h1>Boxy3 T-Shirt with Roll Sleeve</h1>
                 <p>$30.00 <span className='text-red-500'> $20.00</span></p>
                 </div>
-               
+                              <button
+    className="
+      bg-black text-white py-1 px-1 w-40 h-10 rounded-2xl cursor-pointer
+      absolute left-1/2 -translate-x-1/2 bottom-25
+      opacity-0 translate-y-5
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0">
+    ADD TO CART
+  </button>
       
             </div>
           </CarouselItem>
@@ -361,103 +439,75 @@ function Home() {
 </section>
 </section>
 
-<section class="w-full bg-gray-100 py-16">
-  <h2 class="text-4xl font-bold text-center mb-12">OUR BLOG</h2>
+<section className="w-full bg-gray-100 py-16">
+  <h2 className="text-4xl font-bold text-center mb-12">OUR BLOG</h2>
 
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+{/* vvvvvvvvvvv */}
 
-  <div className='flex flex-col gap-2'>
-    <div className='w-[100%] h-[82%]  overflow-hidden'>
-        <motion.img src={imgg.blog_1}
+
+
+
+       <div className="max-w-7xl mx-auto grid grid-cols-3 md:grid-col-3 gap-8 px-6 ">
+        {blogCards.map((item ,index) => (
+          <div key={index.id} className='flex flex-col gap-2'>
+   
+    <div className='w-[100%] h-[82%] overflow-hidden '>
+        <Link to={`/Our_Blog_details/${index}`}>
+        <motion.img src={item.image}
        whileHover={{ scale: 1.1 }}
-      transition={{ duration: 0.6 }} 
-
-     class="w-full h-72 object-cover" />
+       transition={{ duration: 0.6 }} 
+       
+       className="w-full h-72 object-cover" />
+       </Link>
     </div>
   <div className='w-[100%] h-[50%] '>
-        <h3 class="text-xl font-semibold mt-4">
-       Black Friday Guide: Best Sales & Discount Codes
-      </h3>
-      <p class="text-sm text-gray-500 mt-2">
+   
+       <Link to={`/Our_Blog_details/${index}`}>
+       
+        <h3 className="text-xl font-semibold mt-4 hover:text-orange-400">
+       {item.title}
+      </h3> 
+      </Link>
+      <p className="text-sm text-gray-500 mt-2">
         by fashe-theme Admin on Dec 28,2017
       </p>
-      <p class="text-gray-600 mt-3">  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...
+      <p className="text-gray-600 mt-3">
+       {item.text}
     </p>
   </div>
 
   </div>
+  ))}
+   </div>
 
-    <div>
-      <div className='w-[100%] h-[62%] bg-emerald-400 overflow-hidden'>
-          <motion.img src={imgg.blog_2}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.6 }}
-           class="w-full h-75 object-cover" />
-      </div>
-    <div className='w-[100%] h-[50%]'>
-         <h3 class="text-xl font-semibold mt-4">
-      The White Sneakers Nearly Every Fashion Girls Own
-      </h3>
-      <p class="text-sm text-gray-500 mt-2">
-        by fashe-theme Admin on Dec 28,2017
-      </p>
-      <p class="text-gray-600 mt-3">
-      Duis ut velit gravida nibh bibendum commodo.
-         Suspendisse pellentesque mattis augue id euismod. 
-        Interdum et...
-      </p>
-    </div>
-   
-    </div>
+  {/* vvvvvvvvvvvvvvvv */}
 
-    <div>
-      <div className='w-[100%] h-[62%] bg-emerald-400 overflow-hidden'>
-              <motion.img src={imgg.blog_3}
-                 whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.6 }}
-               class=" w-full h-75 object-cover" />
 
-      </div>
-      <div className='w-[100%] h-[50%]'>
-   <h3 class="text-xl font-semibold mt-4"> New York SS 2018 Street Style: By Annina Mislin
-         </h3>                   
-    
-    <p class="text-sm text-gray-500 mt-2">
-        by fashe-theme Admin on Dec 28,2017</p>
-      
-    <p class="text-gray-600  mt-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...
-      </p> 
-      </div>
-     
-       </div>
-
-  </div>
 </section>
 
-<section class="w-full bg-gray-100 py-12 text-center">
- <h2 class="text-3xl font-bold mb-12">@ FOLLOW US ON INSTAGRAM</h2>
+<section className="w-full bg-gray-100 py-12 text-center">
+ <h2 className="text-3xl font-bold mb-12">@ FOLLOW US ON INSTAGRAM</h2>
 
-  <div class="max-w-6xl  mx-auto flex   justify-between px-6">
+  <div className="max-w-6xl  mx-auto flex   justify-between px-6">
 
    <div >
-      <h3 class="text-lg font-semibold">Free Delivery Worldwide</h3>
-      <p class="text-gray-500 text-sm mt-2">
+      <h3 className="text-lg font-semibold">Free Delivery Worldwide</h3>
+      <p className="text-gray-500 text-sm mt-2">
         Mirum est 
         notare quam littera gothica
       </p>
     </div>
 
    <div className='border-l-2 pl-6'>
-      <h3 class="text-lg font-semibold">30 Days Return</h3>
-      <p class="text-gray-500 text-sm mt-2">
+      <h3 className="text-lg font-semibold">30 Days Return</h3>
+      <p className="text-gray-500 text-sm mt-2">
       Simply return it within 30 days for an exchange.
       </p>
     </div>
 
     <div className='border-l-2 pl-6'>
-      <h3 class="text-lg font-semibold">Store Opening</h3>
-    <p class="text-gray-500 text-sm mt-2">
+      <h3 className="text-lg font-semibold">Store Opening</h3>
+    <p className="text-gray-500 text-sm mt-2">
         Shop open from Monday to Sunday
       </p>
     </div>

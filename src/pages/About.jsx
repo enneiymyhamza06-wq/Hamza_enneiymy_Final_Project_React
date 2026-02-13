@@ -4,7 +4,14 @@ import { imgg } from "../constants/imags";
 
 function About() {
     return (
-         <section className=" py-16">
+        <> 
+             <section>
+            <div className='bg-amber-500 w-full h-60 relative'>
+                {/* <img src={i} alt="" /> */}
+            </div>
+            <h1 className='absolute top-60 right-230 text-5xl font-bold'>ABOUT</h1>
+        </section>
+        <section className=" py-16">
              <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
              <div className="w-[90%] h-[100%] bg-indigo-400">
                     <img
@@ -27,6 +34,8 @@ function About() {
                 </div>
             </div>
         </section>
+        </>
+        
     )
 }
 

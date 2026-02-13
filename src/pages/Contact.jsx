@@ -3,6 +3,13 @@ import React from 'react'
 function Contact() {
     return (
         <>
+           <section>
+            <div className='bg-amber-500 w-full h-60 relative'>
+                {/* <img src={i} alt="" /> */}
+            </div>
+            <h1 className='absolute top-60 right-230 text-5xl font-bold'>CONTACT</h1>
+        </section>
+
 <section className="text-gray-600 body-font relative">
     <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
     <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
@@ -24,13 +31,12 @@ src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5901.408187417011!2d-8
               Name
  </label>
      <input
-            // value={first_name}
+    //      value={first_name}
     //   onChange={(e) => setFirst_name(e.target.value)}
             type="text"
      className="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
-                        </div>
-
-                        <div className="relative mb-4">
+          </div>
+             <div className="relative mb-4">
                             <label htmlFor="email" className="leading-7 text-sm text-gray-600">
                                 Email
                             </label>
@@ -78,6 +84,7 @@ src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5901.408187417011!2d-8
 
                 </div>
                 </section>
+
             
         </>
     )

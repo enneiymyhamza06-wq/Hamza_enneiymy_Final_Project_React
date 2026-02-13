@@ -2,6 +2,8 @@ import React from 'react'
 import { imgg } from "../constants/imags";
 import { IoSearch } from "react-icons/io5";
 import {products} from '../constants/data'
+import Footer  from '../components/Footer';
+import Products from '../components/Prodact'
 
 function Shop() {
       const colors = ["black", "gray", "red"];
@@ -34,45 +36,38 @@ function Shop() {
         </label>
       ))}
          </div>
-                     <div className='flex flex-col'>
-                    <h1 className='font-bold text-lg'>Categories</h1>
-<label className="flex items-center cursor-pointer gap-3 text-gray-600">
-  
-                <input type="checkbox"/>
+               <div className='flex flex-col'>
+            <h1 className='font-bold text-lg'>Categories</h1>
+   <label className="flex items-center cursor-pointer gap-3 text-gray-600">
+           <input type="checkbox"/>
                  0-20
         </label>
-
         <label className="flex items-center cursor-pointer gap-3 text-gray-600">
-          
-                <input type="checkbox"/>
+            <input type="checkbox"/>
                   20-40
         </label>
-                </div>
-                     <div className='flex flex-col'>
-                    <h1 className='font-bold text-lg'>Categories</h1>
+            </div>
+            <div className='flex flex-col'>
+            <h1 className='font-bold text-lg'>Categories</h1>
  <label className="flex items-center cursor-pointer gap-3 text-gray-600">
-          
-                <input type="checkbox"/>
+            <input type="checkbox"/>
                   L
         </label>
          <label className="flex items-center cursor-pointer gap-3 text-gray-600">
-          
                 <input type="checkbox"/>
-                  M
-        </label>
+               M
+      </label>
          <label className="flex items-center cursor-pointer gap-3 text-gray-600">
-          
                 <input type="checkbox"/>
                   S
         </label>
          <label className="flex items-center cursor-pointer gap-3 text-gray-600">
-          
                 <input type="checkbox"/>
                   XL
         </label>
-                </div>
-                   <div className='flex flex-col relative'>
-                    <h1 className='font-bold text-lg'>Categories</h1>
+            </div>
+             <div className='flex flex-col relative'>
+             <h1 className='font-bold text-lg'>Categories</h1>
 <input type="text" placeholder='Search...' className='text-gray-500 border w-80 py-2 px-2 outline-0 '/>
  <IoSearch className='absolute cursor-pointer  top-10 right-2'/>
                 </div>
@@ -103,28 +98,8 @@ function Shop() {
         
         </div>
  
-<section >
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16 p-2">
-    
-    {products.map((item) => (
-      <div key={item.id} className="cursor-pointer">
-        <div className="w-full h-97 bg-gray-800 rounded-2xl overflow-hidden">
-             <img 
-               src={item.image} 
-               alt={item.title} 
-               className="w-full h-full object-cover"
-             />
-        </div>
+<Products />
 
-        <div>
-          <h3 className="text-white text-sm font-medium mt-1">{item.title}</h3>
-          <p className="text-gray-400 text-sm">${item.price}</p> 
-        </div>
-
-      </div>
-    ))}
-  </div>
-</section>
 
 
 
@@ -134,6 +109,7 @@ function Shop() {
   
   
     </section>
+  
     </>
   )
 }
